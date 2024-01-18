@@ -1,5 +1,5 @@
 {    "category" : "clothing",
-    "products" : [
+     "products" : [
         {
             "id" : "ts001",
             "Name": "T-shirt",
