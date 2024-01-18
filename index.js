@@ -1,6 +1,9 @@
 const fs = require("fs");
-const {table, log} = require("console");
 const readline = require("readline");
+const {Table, printTable} = require("console-table-printer");
+
+
+
 filepaths=["clothing.json","electronics.json","books.json"];
 //to create interface for taking input
 const rl= readline.createInterface({
@@ -14,7 +17,12 @@ const rl= readline.createInterface({
     return JSON.parse(data);
    
  }
+ 
+ const p =new Table({
+    coloumns : [{Name : "ID"},{Name : "Name"},{Name : "Type"},{Name : "Price"},{Name : "Discount"},{Name : "Inventory"},{Name : "Currency"}],
+  
 
+});
 
 
  var completeData = [];
@@ -32,9 +40,8 @@ const showOptions=()=>{
     rl.question("choose your option   ",userInput=>{
         UserChoice(userInput);
     });
-
-    
 }
+
 
 //if condition to print the details of desired products
 function UserChoice(choice){
@@ -43,20 +50,24 @@ function UserChoice(choice){
        
         const booksInfo = completeData.find(type => type.category === 'books');
         const productarray = booksInfo.products;
-        productarray.forEach(product=>
-            {
-             console.log("ID :", product.id, "\tName :", product.Name, "\tType :",product.Type,"\tAuthor",product.Author,"\tPrice",product.Price, "\tDiscount",product.Discount,"\tInventory",product.Inventory,"\tCurrency",product.currency);
-            });
+        booksInfo.products.forEach(product=>{
+            p.addRow({
+                Id : product.id, Name : product.Name, Type :product.Type, Price : product.Price, Discount : product.Discount,Inventory : product.Inventory,Currency :product.currency
+            })
+        });
+       p.printTable();
        
         rl.close();
     }
     else if (choice === "2"){
         const clothingsInfo = completeData.find(type => type.category === 'clothing');
         const productarray = clothingsInfo.products;
-        productarray.forEach(product=>
-            {
-             console.log("ID :", product.id, "\tName :", product.Name, "\tType :",product.Type,"\tPrice",product.Price, "\tDiscount",product.Discount,"\tInventory",product.Inventory,"\tCurrency",product.currency);
-            });
+        clothingsInfo.products.forEach(product=>{
+            p.addRow({
+                Id : product.id, Name : product.Name, Type :product.Type, Price : product.Price, Discount : product.Discount,Inventory : product.Inventory,Currency :product.currency
+            })
+        });
+       p.printTable();
        
         rl.close()
 
@@ -65,10 +76,12 @@ function UserChoice(choice){
     else if (choice === "3") {
         const electronicsInfo = completeData.find(type => type.category === 'Electronics');
         const productarray = electronicsInfo.products;
-        productarray.forEach(product=>
-            {
-             console.log("ID :", product.id, "\tName :", product.Name, "\tType :",product.Type,"\tPrice",product.Price, "\tDiscount",product.Discount,"\tBrand :",product.Brand,"\tInventory",product.Inventory,"\tCurrency",product.currency);
-            });
+        electronicsInfo.products.forEach(product=>{
+            p.addRow({
+                Id : product.id, Name : product.Name, Type :product.Type, Price : product.Price, Discount : product.Discount,Inventory : product.Inventory,Currency :product.currency
+            })
+        });
+       p.printTable();
        
         rl.close()
     }
