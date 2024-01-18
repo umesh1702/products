@@ -39,7 +39,12 @@ const showOptions=()=>{
             rl.close();
             return;
         } 
+        if (choice > 4 || choice < 1){
+            console.log("wrong option, Try again!!");
+            rl.close();
+        }else{
         UserChoice(productInfo[choice]);
+        };
     });
 };
 
