@@ -1,14 +1,16 @@
 const fs = require("fs");
 const readline = require("readline");
 const {Table, printTable} = require("console-table-printer");
-filepaths=
-["clothing.json","electronics.json","books.json"];
+
+filepaths=["clothing.json","electronics.json","books.json"];
 var completeData = [];
+
 //to create interface for taking input
 const rl= readline.createInterface({
     input : process.stdin,
     output : process.stdout
 });
+
 //function to read the data from json files
  function inputjsonfile(filepath){
     const data =fs.readFileSync(filepath);
@@ -19,11 +21,13 @@ const rl= readline.createInterface({
 const p =new Table({
     coloumns : [{Name : "ID"},{Name : "Name"},{Name : "Type"},{Name : "Price"},{Name : "Discount"},{Name : "Inventory"},{Name : "Currency"}]
 });
+
 //to copy data from json files and copy it to complete data array
 filepaths.forEach(filepath => {
     const loopData= inputjsonfile(filepath);
     completeData.push(loopData);
 });
+
 productInfo= ["","books","clothing","Electronics"];
 // to take input from the user
 const showOptions=()=>{
@@ -60,6 +64,9 @@ function UserChoice(product){
     p.printTable();
     rl.close();    
 };
+
+
+
 showOptions(); //to start with showOptions function
 
  
