@@ -76,7 +76,7 @@ var dataPath=["","books.json","clothing.json","electronics.json"]
 const col=["name","Type","Price","Discount","Inventory","Currency"];
 const options = ["","Add","Del","Modify"]
 const id =["id"]
-
+//function to check whether user need to modify or not
 function userActions(){
     rl.question("Do you want to modify the data (FOR yes '1' and for No '2')  ",response=>{
         if(response === "1"){
@@ -107,7 +107,7 @@ function userActions(){
     }
 })
 }
-
+//function to add the data
 async function DataAdd(){
     const response = await askQuestion("To Which file do you want to Add? ");
     if(response >=1 && response <=3){
@@ -134,6 +134,7 @@ async function DataAdd(){
         }      
 }
 
+//Function to modify the data
 async function DataModify(){
     const response = await askQuestion("Which file do you want to modify? ");
     const selectedProduct = completeData.find(type => type.category === productInfo[response]);
@@ -149,6 +150,7 @@ async function DataModify(){
         }
     }
 
+//function to delete the data 
 async function DataDelete(){
     const response = await askQuestion("Which file do you want to Delete? ");
     const selectedProduct = completeData.find(type => type.category === productInfo[response]);
@@ -174,7 +176,7 @@ async function DataDelete(){
     }
 }
 
-
+//for promise
 function askQuestion(question){
     return new Promise((resolve)=>{
         rl.question(question,answer=>{
@@ -183,6 +185,7 @@ function askQuestion(question){
     })
 }
 
+//function to check what user does
 function userIntrest (opinion){
     console.log("existing files")
     dataPath.forEach((items,index) => { 
