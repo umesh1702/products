@@ -60,16 +60,7 @@
       "Discount": 10,
       "Inventory": 70,
       "currency": "$"
-    },
-    {
-      "Id": "s",
-      "name": "s",
-      "Type": "s",
-      "Price": "s",
-      "Discount": "s",
-      "Inventory": "s",
-      "Currency": "s"
     }
-    
+   
   ]
 }
