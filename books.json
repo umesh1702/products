@@ -1,74 +1,75 @@
-{   "category" : "books",
-    "products" : [
-        {
-            "id" : "foo1",
-            "Name": "Harry porter",
-            "Type" : "books",
-            "Author":"J.K Rowling",
-            "Price": 50,
-            "Discount":3,
-            "Inventory":90,
-            "currency" :"$" 
-
-        },
-        {
-
-            "id" : "foo2",
-            "Name": "The lion king",
-            "Type" : "books",
-            "Author":"J.K Rowling",
-            "Price": 30,
-            "Discount":3,
-            "Inventory":70,
-            "currency" :"$"
-
-
-
-        },
-        {
-            "id" : "foo3",
-            "Name": "The lord of rings",
-            "Type" : "books",
-            "Author":"J.R.R Tolkien",
-            "Price": 75,
-            "Discount":5,
-            "Inventory":110,
-            "currency" :"$"
-        },
-        {
-            "id" : "NFoo1",
-            "Name": "The hitchhicker's guide to galaxy",
-            "Type" : "books",
-            "Author":"Douglas adams",
-            "Price": 60,
-            "Discount":8,
-            "Inventory":70,
-            "currency" :"$"
-
-        },
-        {
-            "id" : "NFoo2",
-            "Name": "1984",
-            "Type" : "books",
-            "Author":"George Orwell",
-            "Price": 40,
-            "Discount":9,
-            "Inventory":20,
-            "currency" :"$"
-
-        },
-        {
-            "id" : "NFoo3",
-            "Name": "To kill a mockingbird",
-            "Type" : "books",
-            "Author":"Harper lee",
-            "Price": 70,
-            "Discount":10,
-            "Inventory":70,
-            "currency" :"$"
-
-         }
-
-    ]
-
+{
+  "category": "books",
+  "products": [
+    {
+      "id": "foo1",
+      "Name": "Harry porter",
+      "Type": "books",
+      "Author": "J.K Rowling",
+      "Price": 50,
+      "Discount": 3,
+      "Inventory": 90,
+      "currency": "$"
+    },
+    {
+      "id": "foo2",
+      "Name": "The lion king",
+      "Type": "books",
+      "Author": "J.K Rowling",
+      "Price": 30,
+      "Discount": 3,
+      "Inventory": 70,
+      "currency": "$"
+    },
+    {
+      "id": "foo3",
+      "Name": "The lord of rings",
+      "Type": "books",
+      "Author": "J.R.R Tolkien",
+      "Price": 75,
+      "Discount": 5,
+      "Inventory": 110,
+      "currency": "$"
+    },
+    {
+      "id": "NFoo1",
+      "Name": "The hitchhicker's guide to galaxy",
+      "Type": "books",
+      "Author": "Douglas adams",
+      "Price": 60,
+      "Discount": 8,
+      "Inventory": 70,
+      "currency": "$"
+    },
+    {
+      "id": "NFoo2",
+      "Name": "1984",
+      "Type": "books",
+      "Author": "George Orwell",
+      "Price": 40,
+      "Discount": 9,
+      "Inventory": 20,
+      "currency": "$"
+    },
+    {
+      "id": "NFoo3",
+      "Name": "To kill a mockingbird",
+      "Type": "books",
+      "Author": "Harper lee",
+      "Price": 70,
+      "Discount": 10,
+      "Inventory": 70,
+      "currency": "$"
+    },
+    {
+      "Id": "s",
+      "name": "s",
+      "Type": "s",
+      "Price": "s",
+      "Discount": "s",
+      "Inventory": "s",
+      "Currency": "s"
+    }
+    
+  ]
 }
