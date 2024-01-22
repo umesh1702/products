@@ -6,7 +6,7 @@
       "Name": "Harry porter",
       "Type": "books",
       "Author": "J.K Rowling",
-      "Price": 50,
+      "Price": "300",
       "Discount": 3,
       "Inventory": 90,
       "currency": "$"
@@ -61,6 +61,5 @@
       "Inventory": 70,
       "currency": "$"
     }
-   
   ]
 }
