@@ -6,7 +6,7 @@
       "Name": "Harry porter",
       "Type": "books",
       "Author": "J.K Rowling",
-      "Price": "300",
+      "Price": 300,
       "Discount": 3,
       "Inventory": 90,
       "currency": "$"
@@ -38,7 +38,7 @@
       "Author": "Douglas adams",
       "Price": 60,
       "Discount": 8,
-      "Inventory": 70,
+      "Inventory": "46",
       "currency": "$"
     },
     {
