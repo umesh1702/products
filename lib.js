@@ -99,7 +99,11 @@ async function DataAdd(){
 
         for (const items of col){
             const answer = await askQuestion(`Enter the value for ${items} `);
-            infObject[items]=answer;  
+            if (items == "Price" || items =="Discount" || items == "Inventory") {
+                infObject[items]=parseInt(answer)
+            }else{
+                infObject[items]=answer;  
+            }
         };  
 
         selectedProduct.products.push(infObject);           
