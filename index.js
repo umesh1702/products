@@ -10,15 +10,15 @@ function askQuestion(question){
     return new Promise((resolve)=>{
         rl.question(question,answer=>{
             resolve(answer);
-        })
-    })
-}
+        });
+    });
+};
 
 
 async function start(){
     option.forEach((items,index)=>{
-    console.log((index),(items));
-    })
+        console.log((index),(items));
+    });
     const choice= await askQuestion("Choose your option  ");
     const choiceInt = parseInt(choice);
 
@@ -33,8 +33,8 @@ async function start(){
     else {
         console.log("choose correct option!!!!!!!");
         start();
-    }
-}
+    };
+};
 
 
 start(); //to start with start function

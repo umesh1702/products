@@ -53,7 +53,7 @@ async function  showOptions(){
         console.log("Thank you!!!!!");
         rl.close();
         return;
-    } 
+    }; 
 
     if (choice > 4 || choice < 1){
         console.log("wrong option, Try again!!");
@@ -67,7 +67,7 @@ async function  showOptions(){
     else {
         console.log("enter correct option");
         showOptions();
-    }
+    };
 
 };
 
@@ -118,8 +118,8 @@ async function DataAdd(){
     else{
         console.log("enter a valid option");
         DataAdd();
-    }      
-}
+    };     
+};
 
 
 //Function to modify the data
@@ -128,7 +128,7 @@ async function DataModify(){
     const selectedProduct = completeData.find(type => type.category === productInfo[response]);
 
     for (let i in selectedProduct.products){
-        console.log(i,selectedProduct.products[i].id,selectedProduct.products[i].Name)
+        console.log(i,selectedProduct.products[i].id,selectedProduct.products[i].Name);
     }  
 
     const selection = await askQuestion("write the index 0f the object to be modified ");
@@ -136,7 +136,7 @@ async function DataModify(){
 
     col.forEach((item,index)=>{
         console.log(index,item);
-    })
+    });
 
     prompt.start();
     const choice = await askQuestion("Which property do you need to modify (NOTE: you cannot change id) ")
@@ -151,7 +151,7 @@ async function DataModify(){
         default : `${selectedProduct.products[selected][col[choice]]}`,
         required : false
         }
-    ]) 
+    ]);
 
     const changedPropertyvalue = changedProperty[col[choice]];
     selectedProduct.products[selected][col[choice]]= changedPropertyvalue;          
@@ -159,7 +159,7 @@ async function DataModify(){
     fs.writeFileSync(`./assests/${dataPath[response]}`,selectedProducts); 
     console.log("your changes have been updated ");
     rl.close();
-}
+};
     
 
 //function to delete the data 
@@ -170,10 +170,10 @@ async function DataDelete(){
 
     for (let i in selectedProduct.products){
         console.log(i,selectedProduct.products[i].id,selectedProduct.products[i].Name);
-    }
+    };
 
     const selection = await askQuestion("write the index 0f the object to be deleted ");
-    const selected = parseInt(selection)
+    const selected = parseInt(selection);
 
     if(response >=1 && response <=3){
         for (let i in selectedProduct.products) {
@@ -182,16 +182,16 @@ async function DataDelete(){
                 var selectedProducts = JSON.stringify(selectedProduct,null,2);
                 fs.writeFileSync(`./assests/${dataPath[response]}`,selectedProducts);
                 rl.close();
-            }
-        }
+            };
+        };
     }
 
     else{
         console.log("enter the right index");
         DataDelete();
-    }
+    };
 
-}
+};
 
 
 // for promise
@@ -199,15 +199,15 @@ function askQuestion(question){
     return new Promise((resolve)=>{
         rl.question(question,answer=>{
             resolve(answer);
-        })
-    })
-}
+        });
+    });
+};
 
 
 //function to check whether user need to modify or not
 async function userActions(){
     const response = await askQuestion("Do you want to modify the data (FOR yes '1' and for No '2')  ");
-    
+
     if(response === "1"){
         options.forEach((items,index) => { 
             if (index >= 1 && index <=3){
@@ -237,7 +237,7 @@ async function userActions(){
         else {
             console.log("enter correct option");
             userActions();
-        }
+        };
 
     }
     else if (response === "2"){
@@ -247,9 +247,9 @@ async function userActions(){
     else {
         console.log("enter correct option !!!!!");
         userActions();
-    }
+    };
 
-}
+};
 
 
 
@@ -259,7 +259,7 @@ function userIntrest (opinion){
     dataPath.forEach((items,index) => { 
         if (index >= 1 && index <=3){
             console.log((index),(items));
-        }
+        };
     });
     if (opinion === "Add"){
         DataAdd();
@@ -269,8 +269,8 @@ function userIntrest (opinion){
     }
     else if(opinion === "Del"){
         DataDelete();
-    }
-}
+    };
+};
 
 
 module.exports={rl,productInfo,completeData,table,showOptions,DataAdd,DataDelete,DataModify,userActions};
