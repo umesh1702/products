@@ -24,7 +24,7 @@ const rl= readline.createInterface({
 function inputjsonfile(filepath){
     const data =fs.readFileSync(filepath);
     return JSON.parse(data);  
- };
+};
 
  //Loop to copy the details 
 filepaths.forEach(filepath => {
@@ -44,14 +44,16 @@ async function  showOptions(){
             console.log((index),(items));
         }
     });
-        console.log("4. exit");
+
+    console.log("4. exit");
     const selectedOption = await askQuestion("choose your option: ")
     const choice = parseInt(selectedOption);
+
     if(choice == 4){
         console.log("Thank you!!!!!");
         rl.close();
         return;
-        } 
+    } 
 
     if (choice > 4 || choice < 1){
         console.log("wrong option, Try again!!");
@@ -116,7 +118,7 @@ async function DataAdd(){
     else{
         console.log("enter a valid option");
         DataAdd();
-        }      
+    }      
 }
 
 
@@ -205,12 +207,14 @@ function askQuestion(question){
 //function to check whether user need to modify or not
 async function userActions(){
     const response = await askQuestion("Do you want to modify the data (FOR yes '1' and for No '2')  ");
+    
     if(response === "1"){
         options.forEach((items,index) => { 
             if (index >= 1 && index <=3){
                 console.log((index),(items));
             }
         });
+
         console.log("4. exit");
         const selectedOption= await askQuestion("choose your option: ");
         const choice = parseInt(selectedOption);
