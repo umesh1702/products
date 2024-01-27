@@ -1,7 +1,6 @@
 const fs = require("fs");
 const readline = require("readline");
 const {Table, printTable} = require("console-table-printer");
-const { resolve } = require("path");
 const uid = require("uniqid");
 const prompt = require ("prompt");
 
@@ -274,11 +273,3 @@ function userIntrest (opinion){
 
 
 module.exports={rl,productInfo,completeData,table,showOptions,DataAdd,DataDelete,DataModify,userActions};
-
-
-
-
-
-
-
-

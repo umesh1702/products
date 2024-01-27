@@ -1,4 +1,3 @@
-const { resolve } = require("path");
 const lib = require("./lib.js");
 
 var completeData = lib.completeData
@@ -38,9 +37,3 @@ async function start(){
 
 
 start(); //to start with start function
-
-
-
-
-
-
